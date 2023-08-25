@@ -1,0 +1,18 @@
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+    color: var(--black);
+}
+.heading span{
+    background: rgb(32, 168, 79);
+    color: #fff;
+    display: inline-block;
+    clip-path: polygon(100% 0,93% 50%,100% 99%,0% 100%,7% 50%, 0% 0%);
+    padding: .5rem 1.5rem;
+}
+.heading span:hover{
+    background:rgb(186, 243, 31);
+    cursor: pointer;
+}

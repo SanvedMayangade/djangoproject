@@ -1,0 +1,40 @@
+.icon{
+    text-align:center ;
+    margin-left: 45%;
+    
+}
+/* .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: 2rem solid  var(--black);
+    cursor: pointer;
+    background: none;
+}
+.login-form{
+    position: absolute;
+    top: 110%; right: 2rem;
+    text-align: center;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: #fff;
+} */
+.register label{
+    font-size: 6rem;
+	font-weight: bolder;
+	color: var(--black);
+}
+p{
+    font-size: 1rem;
+    color: var(--black);
+}
+p a{
+    color: var(--orange);
+    text-decoration: underline;
+}
+p a:hover{
+    color: var(--orange);
+}

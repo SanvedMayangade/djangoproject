@@ -1,0 +1,40 @@
+{% extends 'store/layouts/main.html' %}
+{% load static %}
+{% block content %} 
+<link rel="stylesheet" href={% static 'css/categories.css' %}>
+<div class="name">
+    <div class="container">
+        <a class="text" href="{% url 'home' %}">Home</a>
+        <a class="number">+919146918685</a>
+        {% comment %} <a class="text-white" href="{% url 'collections'%}">Collections </a> {% endcomment %}
+    </div>
+</div>
+<div class="container"> 
+    <div class="row">
+        <div class ="col-md-15">
+            
+            <section class="features" id="features">
+                <h1 class="heading">Our<span>Categories</span></h1>
+            </section>
+            
+                <div class="row">
+                    {% for item in category %}
+                        <div class="col-md-4">
+                            <div class="card">
+                               <a href="{% url 'collectionsview' item.slug %}">
+                                    <div class="cart-body">
+                                        <div class="Category-image">
+                                            <img src="{{ item.image.url }}" alt="Category image" class="w-100" width="200" height="200">
+                                        </div>
+                                    <h4 class="text-center"> {{ item.name }} </h4>
+                                </div>
+                            </a>                     
+                        </div>                    
+                    </div>                
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %} 

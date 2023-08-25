@@ -1,0 +1,32 @@
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    color: var(--black);
+}
+.heading span{
+    background: rgb(32, 168, 79);
+    color: #fff;
+    display: inline-block;
+    clip-path: polygon(100% 0,93% 50%,100% 99%,0% 100%,7% 50%, 0% 0%);
+    padding: .5rem 1.5rem;
+    font-size: 2.5rem;
+}
+.heading span:hover{
+    background:rgb(186, 243, 31);
+    cursor: pointer;
+}
+.icon{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    color: red;
+}
+.icon_name{
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 100px;
+    font-family: 'Poppins',sans-serif;
+    color: rgb(0, 64, 128) ;
+}
