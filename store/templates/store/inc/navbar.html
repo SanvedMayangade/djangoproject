@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grocery shop</title>
+
+	<link rel="stylesheet" href={% static 'css/navbar.css' %}>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+
+</head>
+<body>
+
+	<header class="header">
+		<a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Grocery Shop</a>
+		<nav class="navbar">
+			
+			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'collections' %}">Categories</a>
+      <a href="{% url 'cart' %}">Cart</a>
+      <a href="{% url 'wishlist' %}">wishlist</a>
+     
+
+      {% if request.user.is_authenticated %} 
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          {{ request.user }}
+        </a>
+        <ul class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'myorders' %}">My Orders</a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+        </ul>
+
+      </div>
+      {% else %}
+          
+            <a class="nav-link" href="{% url 'loginpage' %}">Login</a>
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+         
+          
+        {% endif %}
+		
+    
+  </nav>
+    <div class="icons">
+      <div class="fas fa-bars" id="menu-btn">
+      </div>
+      <div class="fas fa-search" id="search-btn">
+      </div>
+
+      
+  </div>
+		
+    {% comment %} Search Bar {% endcomment %}
+    <div>
+    {% if request.user.is_authenticated %}  
+      
+    <form action="{% url 'searchproducts'  %}" method="POST" class="search-form">
+        {% csrf_token %}
+        <input type="search" class="search-box" name="searchproduct" id="search-box" placeholder="search here....">          <button for="search-box" class="fas fa-search"></button>
+        
+    </form>
+    {% endif %}
+  </div>
+	</header>
+	
+
+	
+  <script src="{% static '/js/navbar.js' %}"></script>
+</body>
+</html>
